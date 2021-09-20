@@ -1,0 +1,8 @@
+newmtl deskBottom
+Kd 0.2358491 0.2213866 0.2213866
+d 1
+
+newmtl DoorMaterial
+Kd 0.6014151 0.7450374 0.8018868
+d 0.8431373
+
