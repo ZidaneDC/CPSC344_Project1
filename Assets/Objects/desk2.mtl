@@ -1,0 +1,12 @@
+newmtl New_Material
+Kd 1 1 1
+d 1
+
+newmtl deskBottom
+Kd 0.3301887 0.2881364 0.2881364
+d 1
+
+newmtl deskTop
+Kd 0.3018868 0.1466714 0.1466714
+d 1
+

@@ -1,0 +1,13 @@
+newmtl ChairBottom
+Kd 0 0 0
+d 1
+
+newmtl ChairMaterial
+Kd 0.1603774 0.130874 0.130874
+d 1
+
+newmtl ProBuilderDefault
+map_Kd /Users/micamarietta/Documents/School/LevelDesign_244/CPSC344_Project1/Assets/s/com.unity.probuilder/Content/Resources/Textures/GridBox_Default.png
+Kd 1 1 1
+d 1
+

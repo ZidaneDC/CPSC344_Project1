@@ -1,0 +1,12 @@
+newmtl CubicleTan
+Kd 0.8018868 0.7694655 0.6694998
+d 1
+
+newmtl CubicleBottom
+Kd 0.5943396 0.5803221 0.5803221
+d 1
+
+newmtl Window
+Kd 0.7167587 0.8181912 0.8584906
+d 0.2705882
+

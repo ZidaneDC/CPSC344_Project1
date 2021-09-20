@@ -1,0 +1,8 @@
+newmtl SittingChair
+Kd 0.5545707 0.8018868 0.4047259
+d 1
+
+newmtl deskBottom
+Kd 0.3301887 0.2881364 0.2881364
+d 1
+
