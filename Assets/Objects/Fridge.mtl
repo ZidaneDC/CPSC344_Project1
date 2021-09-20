@@ -1,0 +1,19 @@
+newmtl Grey
+Kd 0.8018868 0.8018868 0.8018868
+d 1
+
+newmtl fridge_front
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/fridge front.jpg
+Kd 1 1 1
+d 1
+
+newmtl Black_metal
+map_Pm C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/istockphoto-1057639240-612x612.jpg
+Kd 0.1226415 0.1226415 0.1226415
+d 1
+
+newmtl istockphoto-1057639240-612x612
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/istockphoto-1057639240-612x612.jpg
+Kd 1 1 1
+d 1
+

@@ -1,0 +1,20 @@
+newmtl Lampshade
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/K4850views1.jpeg
+Kd 1 1 1
+d 1
+
+newmtl Wood_Texture
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/Walnut-Wood-Seamless-Background-Texture-7.jpg
+Kd 1 1 1
+d 1
+
+newmtl Metal_Texture
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/istockphoto-1057639240-612x612.jpg
+map_Pm C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/istockphoto-1057639240-612x612.jpg
+Kd 1 1 1
+d 1
+
+newmtl Light_bulb
+Kd 1 0.9166349 0.3820755
+d 1
+
