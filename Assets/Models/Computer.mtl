@@ -1,0 +1,9 @@
+newmtl Computer_Color
+Kd 0.1226415 0.1226415 0.1226415
+d 1
+
+newmtl Computer_Screen
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/windowsbsod.0.0.jpg
+Kd 1 1 1
+d 1
+
