@@ -1,0 +1,12 @@
+newmtl CubicleBottom
+Kd 0.6226415 0.5785867 0.5785867
+d 1
+
+newmtl deskTop
+Kd 0.745283 0.6925507 0.6925507
+d 1
+
+newmtl ChairMaterial
+Kd 0.1415094 0.128827 0.128827
+d 1
+

@@ -1,0 +1,8 @@
+newmtl deskBottom
+Kd 0.2358491 0.2213866 0.2213866
+d 1
+
+newmtl deskTop
+Kd 0.745283 0.6925507 0.6925507
+d 1
+
