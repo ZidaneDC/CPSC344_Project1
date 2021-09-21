@@ -30,10 +30,11 @@ Ceilings
 Shelves
 Doors
 Chairs
-Tables
+Low tables
 Cubicle Walls
 Desks
-Pillars
+Counters
+Meting tables
 Cabinets
 
 Zidane:
