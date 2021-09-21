@@ -1,0 +1,24 @@
+newmtl Plastic
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/Materials/360_F_42764522_zujSmnqvS9siZ2AeM5tnhgd1838ViLuX.jpg
+Kd 1 1 1
+d 1
+
+newmtl CubicleTan
+Kd 0.6886792 0.6743007 0.5489943
+d 1
+
+newmtl pinkGrad
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/pinkGrad.png
+Kd 1 1 1
+d 1
+
+newmtl Grey_1
+map_Pm C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/Materials/istockphoto-1057639240-612x612.jpg
+Kd 0.8018868 0.8018868 0.8018868
+d 1
+
+newmtl Black_metal
+map_Pm C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/Textures/Project 1 Textures/Materials/istockphoto-1057639240-612x612.jpg
+Kd 0.1226415 0.1226415 0.1226415
+d 1
+
