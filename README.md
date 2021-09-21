@@ -48,3 +48,7 @@ Fridge
 Coffee machine
 Photo frames
 Printer/stacks of paper
+
+Known Issues:
+Due to issues with ProBuilder exports, 3 object assets are not exported as .obj files. 
+The photos, radio, and TV objects are in the prefabs folder.
