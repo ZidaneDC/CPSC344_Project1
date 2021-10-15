@@ -515,7 +515,7 @@ MonoBehaviour:
   nameText: {fileID: 528676618}
   dialogueText: {fileID: 1153657386}
   textSpeed: 0.05
-  fastTextSpeed: 0.3
+  fastTextSpeed: 1
   continueButton: {fileID: 673838098}
   startButton: {fileID: 1179582538}
 --- !u!4 &593523727

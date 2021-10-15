@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
+    private Keyboard kb;
 
     public Animator animator;
     public Text nameText;
@@ -20,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        kb = InputSystem.GetDevice<Keyboard>();
         sentences = new Queue<string>();
         continueButton.SetActive(false);
     }
@@ -60,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            if (Input.GetKeyDown("space"))
+            if (kb.spaceKey.wasPressedThisFrame)
             {
                 yield return new WaitForSeconds(fastTextSpeed);
             }
