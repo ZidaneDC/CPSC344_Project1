@@ -240,7 +240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -207, y: 129}
+  m_AnchoredPosition: {x: -211.8177, y: 141.04424}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528676618
@@ -514,6 +514,10 @@ MonoBehaviour:
   animator: {fileID: 2027081057}
   nameText: {fileID: 528676618}
   dialogueText: {fileID: 1153657386}
+  textSpeed: 0.05
+  fastTextSpeed: 0.3
+  continueButton: {fileID: 673838098}
+  startButton: {fileID: 1179582538}
 --- !u!4 &593523727
 Transform:
   m_ObjectHideFlags: 0
@@ -638,7 +642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48.1, y: -16.685255}
+  m_AnchoredPosition: {x: -220, y: -75}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673838100
@@ -850,8 +854,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -207, y: 64}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -59.431, y: 34.018}
+  m_SizeDelta: {x: 464.778, y: 158.164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153657386
 MonoBehaviour:
@@ -906,10 +910,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1179582539}
+  - component: {fileID: 1179582541}
   - component: {fileID: 1179582543}
   - component: {fileID: 1179582542}
   - component: {fileID: 1179582540}
-  - component: {fileID: 1179582541}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -934,7 +938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 229, y: -352}
+  m_AnchoredPosition: {x: -525, y: -323}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179582540
@@ -1008,9 +1012,30 @@ MonoBehaviour:
   dialogue:
     name: Hacker
     sentences:
-    - this is a test!
-    - hope it goes well!
-    - please work
+    - You were living the dream.
+    - " A beautiful apartment right in Avaritia city complete with Nozama\u2019s
+      line of practical furniture, a respectable wardrobe collection, a sensible
+      and stylish car, and the ability to buy whatever you want."
+    - "All because of Nozama. \n\nThe Nozma Corporation, the economic, social, and
+      political driving force of the city, gave you everything."
+    - "And then\u2026 they took it all away.\n\nTwenty-one years, gone, wasted. \n\nYou
+      had it all, and now you have nothing."
+    - You sleep on the streets of Avaritia, miserable and powerless; while Nozama
+      keeps their power-
+    - "Over you, \r\n\nOver the city, \n\nOver everyone.\r\n"
+    - "Don\u2019t you want to take that power back?\n\nYou know this is the only
+      way, Nova. The only way for us to get that power back."
+    - 'We have to take down Nozama, or try.
+
+      Every office, one by one. Join
+      me.
+
+      Stick with the plan. '
+    - 'OFFICE ADDRESS
+
+      
+
+      Sincerely, the Hacker'
 --- !u!114 &1179582542
 MonoBehaviour:
   m_ObjectHideFlags: 0

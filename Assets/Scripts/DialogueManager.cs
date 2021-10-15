@@ -11,15 +11,24 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public float textSpeed;
+    public float fastTextSpeed;
+
+    public GameObject continueButton;
+    public GameObject startButton;
+
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        continueButton.SetActive(false);
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue) //on start button press, the button will deactivate and the dialogue ui will apppear
     {
+        startButton.SetActive(false);
         animator.SetBool("IsOpen", true);
+        continueButton.SetActive(true);
 
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -32,7 +41,7 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence() //on continue button press, this activates
     {
         if (sentences.Count == 0)
         {
@@ -45,13 +54,20 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence (string sentence) //coroutine that controls text typing
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            if (Input.GetKeyDown("space"))
+            {
+                yield return new WaitForSeconds(fastTextSpeed);
+            }
+            else
+            {
+                yield return new WaitForSeconds(textSpeed);
+            }
         }
     }
 
