@@ -515,7 +515,7 @@ MonoBehaviour:
   nameText: {fileID: 528676618}
   dialogueText: {fileID: 1153657386}
   textSpeed: 0.05
-  fastTextSpeed: 1
+  fastTextSpeed: 0.001
   continueButton: {fileID: 673838098}
   startButton: {fileID: 1179582538}
 --- !u!4 &593523727
@@ -1033,7 +1033,7 @@ MonoBehaviour:
       Stick with the plan. '
     - 'OFFICE ADDRESS
 
-      
+
 
       Sincerely, the Hacker'
 --- !u!114 &1179582542

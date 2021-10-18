@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
-    private Keyboard kb;
+    //private Keyboard kb;
 
     public Animator animator;
     public Text nameText;
@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        kb = InputSystem.GetDevice<Keyboard>();
+        //kb = InputSystem.GetDevice<Keyboard>();
         sentences = new Queue<string>();
         continueButton.SetActive(false);
     }
@@ -62,14 +62,18 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
-            if (kb.spaceKey.wasPressedThisFrame)
+            if (!Input.GetKeyDown("space"))//kb.spaceKey.wasPressedThisFrame
             {
-                yield return new WaitForSeconds(fastTextSpeed);
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(textSpeed);
+                
             }
             else
             {
-                yield return new WaitForSeconds(textSpeed);
+                //dialogueText.text += letter;
+                //yield return new WaitForSeconds(fastTextSpeed);
+                dialogueText.text = sentence;
+                yield break;
             }
         }
     }
