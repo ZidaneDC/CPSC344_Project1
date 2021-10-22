@@ -7,14 +7,14 @@ using UnityEngine.InputSystem;
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
-    //private Keyboard kb;
 
     public Animator animator;
     public Text nameText;
     public Text dialogueText;
 
     public float textSpeed;
-    public float fastTextSpeed;
+
+    //private bool buttonPress;
 
     public GameObject continueButton;
     public GameObject startButton;
@@ -22,10 +22,19 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //kb = InputSystem.GetDevice<Keyboard>();
         sentences = new Queue<string>();
         continueButton.SetActive(false);
+        //buttonPress = false;
     }
+
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown("space"))
+    //    {
+    //        buttonPress = true;
+    //        Debug.Log("space key down.");
+    //    }
+    //}
 
     public void StartDialogue(Dialogue dialogue) //on start button press, the button will deactivate and the dialogue ui will apppear
     {
@@ -57,26 +66,42 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence) //coroutine that controls text typing
+    IEnumerator TypeSentence(string sentence) //coroutine that controls text typing
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            if (!Input.GetKeyDown("space"))//kb.spaceKey.wasPressedThisFrame
+            if (!Input.GetKeyDown("space"))
             {
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(textSpeed);
-                
+
             }
             else
             {
-                //dialogueText.text += letter;
-                //yield return new WaitForSeconds(fastTextSpeed);
                 dialogueText.text = sentence;
                 yield break;
             }
         }
     }
+
+    //IEnumerator TypeSentence(string sentence)
+    //{
+    //    dialogueText.text = "";
+    //    while (buttonPress == false)
+    //    {
+    //        foreach (char letter in sentence.ToCharArray())
+    //        {
+    //            dialogueText.text += letter;
+    //            yield return new WaitForSeconds(textSpeed);
+    //        }
+    //        break;
+    //    }
+
+    //    dialogueText.text = sentence;
+    //    buttonPress = false;
+    //    yield break;
+    //}
 
     void EndDialogue()
     {
