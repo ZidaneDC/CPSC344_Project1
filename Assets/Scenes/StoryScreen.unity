@@ -663,6 +663,7 @@ MonoBehaviour:
   textSpeed: 0.05
   continueButton: {fileID: 673838098}
   startButton: {fileID: 1179582538}
+  loadLevelButton: {fileID: 34214568}
 --- !u!4 &593523727
 Transform:
   m_ObjectHideFlags: 0
