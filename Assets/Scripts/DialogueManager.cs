@@ -18,12 +18,15 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject continueButton;
     public GameObject startButton;
+    public GameObject loadLevelButton;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
         continueButton.SetActive(false);
+        loadLevelButton.SetActive(false);
+        
         //buttonPress = false;
     }
 
@@ -106,5 +109,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        loadLevelButton.SetActive(true);
     }
 }
