@@ -26,9 +26,9 @@ public class Collectible : MonoBehaviour
             {
                 //send information to player inventory
                 playerInventory.inventory.Add(objectType);
-                Debug.Log(objectType + "added to inventory.");
+                Debug.Log(objectType + " added to inventory.");
                 //hide ui
-                hidePrompt();
+                HidePrompt();
                 Destroy(gameObject);
             }
         }
@@ -42,7 +42,7 @@ public class Collectible : MonoBehaviour
             Debug.Log("Entered object range.");
             canCollect = true;
             //display ui
-            displayPrompt();
+            DisplayPrompt();
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             //make sure script was obtained
@@ -57,15 +57,15 @@ public class Collectible : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         playerInventory = null;
-        hidePrompt();
+        HidePrompt();
     }
 
-    private void displayPrompt()
+    private void DisplayPrompt()
     {
         collectionPrompt.SetActive(true);
     }
 
-    private void hidePrompt()
+    private void HidePrompt()
     {
         collectionPrompt.SetActive(false);
     }
