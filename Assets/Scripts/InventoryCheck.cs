@@ -6,6 +6,8 @@ public class InventoryCheck : MonoBehaviour
 {
     public GameObject interactionPrompt;
     public List<string> itemsNeeded = new List<string>();
+    public GameObject successPopup;
+    public GameObject failPopup;
 
     private PlayerInventory playerInventory;
     private bool canInteract;
@@ -15,6 +17,8 @@ public class InventoryCheck : MonoBehaviour
     {
         canInteract = false;
         canPass = false;
+        HideSuccessPopup();
+        HideFailPopup();
     }
     private void Update()
     {
@@ -44,7 +48,13 @@ public class InventoryCheck : MonoBehaviour
             }
         }
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        playerInventory = null;
+        HidePrompt();
+    }
+
     private void CheckInventory()
     {
         HidePrompt();
@@ -76,12 +86,14 @@ public class InventoryCheck : MonoBehaviour
     private void CheckPassed()
     {
         Debug.Log("Check passed.");
+        ShowSuccessPopup();
         Destroy(gameObject);
     }
 
     private void CheckFailed()
     {
         Debug.Log("Check failed. Items needed not found in player inventory.");
+        ShowFailPopup();
     }
     private void DisplayPrompt()
     {
@@ -91,5 +103,25 @@ public class InventoryCheck : MonoBehaviour
     private void HidePrompt()
     {
         interactionPrompt.SetActive(false);
+    }
+
+    public void HideFailPopup()
+    { 
+        failPopup.SetActive(false);
+    }
+
+    public void ShowFailPopup()
+    {
+        failPopup.SetActive(true);
+    }
+
+    public void HideSuccessPopup()
+    {
+        successPopup.SetActive(false);
+    }
+
+    public void ShowSuccessPopup()
+    {
+        successPopup.SetActive(true);
     }
 }
