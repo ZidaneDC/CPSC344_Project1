@@ -1,13 +1,72 @@
 //CPCS 344 - Level Design II, Chapman University, Fall 21
 //Script reference : https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collectible : MonoBehaviour
 {
-    //Upon a collider hitting the trigger, this collectible will be destroyed
-    private void OnTriggerEnter(Collider other)
+    public string objectType;
+    public GameObject collectionPrompt;
+
+    private PlayerInventory playerInventory;
+    private bool canCollect;
+
+    private void Start()
     {
-        Destroy(gameObject);
+        collectionPrompt.SetActive(false);
+        canCollect = false;
     }
 
+    private void Update()
+    {
+        if (canCollect)
+        {
+            //wait for player input, upon which the object will be destroyed and the object added to player inventory
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //send information to player inventory
+                playerInventory.inventory.Add(objectType);
+                Debug.Log(objectType + "added to inventory.");
+                //hide ui
+                hidePrompt();
+                Destroy(gameObject);
+            }
+        }
+    }
+    //OLD: Upon a collider hitting the trigger, this collectible will be destroyed
+    //updated version will display a UI popup upon player entering the trigger area
+    private void OnTriggerEnter(Collider other)
+    {
+       if(other.tag == "Player")
+        {
+            Debug.Log("Entered object range.");
+            canCollect = true;
+            //display ui
+            displayPrompt();
+            //find player script
+            playerInventory = other.gameObject.GetComponent<PlayerInventory>();
+            //make sure script was obtained
+            if (playerInventory != null)
+            {
+                Debug.Log("Obtained player inventory.");
+            }
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        playerInventory = null;
+        hidePrompt();
+    }
+
+    private void displayPrompt()
+    {
+        collectionPrompt.SetActive(true);
+    }
+
+    private void hidePrompt()
+    {
+        collectionPrompt.SetActive(false);
+    }
 }
