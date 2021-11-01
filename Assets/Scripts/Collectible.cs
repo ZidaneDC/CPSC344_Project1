@@ -39,17 +39,17 @@ public class Collectible : MonoBehaviour
     {
        if(other.tag == "Player")
         {
-            Debug.Log("Entered object range.");
+            //Debug.Log("Entered object range.");
             canCollect = true;
             //display ui
             DisplayPrompt();
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             //make sure script was obtained
-            if (playerInventory != null)
-            {
-                Debug.Log("Obtained player inventory.");
-            }
+            //if (playerInventory != null)
+            //{
+            //    Debug.Log("Obtained player inventory.");
+            //}
         }
     }
 

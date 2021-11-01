@@ -6,8 +6,7 @@ public class InventoryCheck : MonoBehaviour
 {
     public GameObject interactionPrompt;
     public List<string> itemsNeeded = new List<string>();
-    public GameObject successPopup;
-    public GameObject failPopup;
+    public UIManager uiManager;
 
     private PlayerInventory playerInventory;
     private bool canInteract;
@@ -17,8 +16,6 @@ public class InventoryCheck : MonoBehaviour
     {
         canInteract = false;
         canPass = false;
-        HideSuccessPopup();
-        HideFailPopup();
     }
     private void Update()
     {
@@ -36,16 +33,16 @@ public class InventoryCheck : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Entered object range.");
+            //Debug.Log("Entered object range.");
             canInteract = true;
             DisplayPrompt();
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             //make sure script was obtained
-            if (playerInventory != null)
-            {
-                Debug.Log("Obtained player inventory.");
-            }
+            //if (playerInventory != null)
+            //{
+            //    Debug.Log("Obtained player inventory.");
+            //}
         }
     }
 
@@ -86,14 +83,14 @@ public class InventoryCheck : MonoBehaviour
     private void CheckPassed()
     {
         Debug.Log("Check passed.");
-        ShowSuccessPopup();
+        uiManager.ShowSuccessPopup();
         Destroy(gameObject);
     }
 
     private void CheckFailed()
     {
         Debug.Log("Check failed. Items needed not found in player inventory.");
-        ShowFailPopup();
+        uiManager.ShowFailPopup();
     }
     private void DisplayPrompt()
     {
@@ -105,23 +102,4 @@ public class InventoryCheck : MonoBehaviour
         interactionPrompt.SetActive(false);
     }
 
-    public void HideFailPopup()
-    { 
-        failPopup.SetActive(false);
-    }
-
-    public void ShowFailPopup()
-    {
-        failPopup.SetActive(true);
-    }
-
-    public void HideSuccessPopup()
-    {
-        successPopup.SetActive(false);
-    }
-
-    public void ShowSuccessPopup()
-    {
-        successPopup.SetActive(true);
-    }
 }
