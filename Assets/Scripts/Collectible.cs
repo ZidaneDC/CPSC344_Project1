@@ -7,6 +7,7 @@ public class Collectible : MonoBehaviour
 {
     public string objectType;
     public GameObject collectionPrompt;
+    public AudioManager audioManager;
 
     private PlayerInventory playerInventory;
     private bool canCollect;
@@ -25,6 +26,7 @@ public class Collectible : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //send information to player inventory
+                audioManager.playPickupSound();
                 playerInventory.inventory.Add(objectType);
                 Debug.Log(objectType + " added to inventory.");
                 //hide ui

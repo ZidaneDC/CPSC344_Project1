@@ -7,6 +7,7 @@ public class InventoryCheck : MonoBehaviour
     public GameObject interactionPrompt;
     public List<string> itemsNeeded = new List<string>();
     public UIManager uiManager;
+    public AudioManager audioManager;
 
     private PlayerInventory playerInventory;
     private bool canInteract;
@@ -82,14 +83,16 @@ public class InventoryCheck : MonoBehaviour
 
     private void CheckPassed()
     {
-        Debug.Log("Check passed.");
+        //Debug.Log("Check passed.");
+        audioManager.playSuccessSound();
         uiManager.ShowSuccessPopup();
         Destroy(gameObject);
     }
 
     private void CheckFailed()
     {
-        Debug.Log("Check failed. Items needed not found in player inventory.");
+        //Debug.Log("Check failed. Items needed not found in player inventory.");
+        audioManager.playErrorSound();
         uiManager.ShowFailPopup();
     }
     private void DisplayPrompt()
