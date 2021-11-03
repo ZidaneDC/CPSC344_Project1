@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public Text nameText;
     public Text dialogueText;
+    public AudioManager audioManager;
 
     public float textSpeed;
 
@@ -143,7 +144,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             popUps.SetActive(true);
-            //aud.Play();
+            audioManager.playErrorSound();
             timesRan++;
             
         }

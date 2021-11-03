@@ -11,16 +11,16 @@ public class AudioManager : MonoBehaviour
 
     public void playErrorSound()
     {
-        audioSource.PlayOneShot(error, 1);
+        audioSource.PlayOneShot(error, 3);
     }
 
     public void playSuccessSound()
     {
-        audioSource.PlayOneShot(success, 1);
+        audioSource.PlayOneShot(success, 2);
     }
 
     public void playPickupSound()
     {
-        audioSource.PlayOneShot(pickup, 1);
+        audioSource.PlayOneShot(pickup, 2);
     }
 }
