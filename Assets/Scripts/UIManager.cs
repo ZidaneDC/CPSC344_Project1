@@ -6,12 +6,14 @@ public class UIManager : MonoBehaviour
 {
     public GameObject successPopup;
     public GameObject failPopup;
+    public GameObject miniGamePopup;
 
     // Start is called before the first frame update
     void Start()
     {
         HideSuccessPopup();
         HideFailPopup();
+        HideMinigamePopup();
     }
 
     private void Update()
@@ -22,6 +24,18 @@ public class UIManager : MonoBehaviour
             {
                 HideFailPopup();
                 HideSuccessPopup();
+            }
+        }
+
+        //specific for minigame popup
+        if (miniGamePopup.activeInHierarchy)
+        {
+            Time.timeScale = 0;
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                HideMinigamePopup();
+                Time.timeScale = 1;
             }
         }
     }
@@ -44,5 +58,15 @@ public class UIManager : MonoBehaviour
     public void ShowSuccessPopup()
     {
         successPopup.SetActive(true);
+    }
+
+    public void ShowMinigamePopup()
+    {
+        miniGamePopup.SetActive(true);
+    }
+
+    public void HideMinigamePopup()
+    {
+        miniGamePopup.SetActive(false);
     }
 }
