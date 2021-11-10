@@ -360,6 +360,80 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7897400590180242811, guid: 42dc0e9f221ca45829026a5eacf29794, type: 3}
+--- !u!1 &6855263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6855266}
+  - component: {fileID: 6855265}
+  - component: {fileID: 6855264}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6855264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+--- !u!114 &6855265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &6855266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8534488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 7e62db484c13e40988c291ee13ff9243, type: 3}
@@ -392,6 +466,7 @@ GameObject:
   - component: {fileID: 12078997}
   - component: {fileID: 12078996}
   - component: {fileID: 12078999}
+  - component: {fileID: 12079000}
   m_Layer: 5
   m_Name: KeyPadButton1
   m_TagString: Untagged
@@ -465,7 +540,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 12078999}
         m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
-        m_MethodName: OnButtonTap
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1260531869}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1260531869}
@@ -526,7 +613,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 1175402990}
-  enteredCode: {fileID: 1500956991}
+  desiredCode: 1234
+--- !u!114 &12079000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12078994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
   desiredCode: 1234
 --- !u!4 &14369973 stripped
 Transform:
@@ -1768,6 +1868,7 @@ GameObject:
   - component: {fileID: 49986728}
   - component: {fileID: 49986727}
   - component: {fileID: 49986726}
+  - component: {fileID: 49986729}
   m_Layer: 5
   m_Name: KeyPadButton9
   m_TagString: Untagged
@@ -1838,7 +1939,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 49986727}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &49986727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,6 +1990,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49986724}
   m_CullTransparentMesh: 1
+--- !u!114 &49986729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49986724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!4 &50409674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e71d1c61afc64bc68d69db55c6a8bbc, type: 3}
@@ -2864,6 +2991,7 @@ GameObject:
   - component: {fileID: 112626373}
   - component: {fileID: 112626372}
   - component: {fileID: 112626371}
+  - component: {fileID: 112626374}
   m_Layer: 5
   m_Name: KeyPadButtonAsterisk
   m_TagString: Untagged
@@ -2934,7 +3062,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 112626372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &112626372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2973,6 +3113,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112626369}
   m_CullTransparentMesh: 1
+--- !u!114 &112626374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112626369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &113474801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7951,6 +8105,7 @@ GameObject:
   - component: {fileID: 286108421}
   - component: {fileID: 286108420}
   - component: {fileID: 286108419}
+  - component: {fileID: 286108422}
   m_Layer: 5
   m_Name: KeyPadButton2
   m_TagString: Untagged
@@ -8021,7 +8176,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 286108420}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 402168409}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &286108420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8060,6 +8227,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286108417}
   m_CullTransparentMesh: 1
+--- !u!114 &286108422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286108417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!4 &287750250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e71d1c61afc64bc68d69db55c6a8bbc, type: 3}
@@ -8878,7 +9059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 1175402990}
-  enteredCode: {fileID: 0}
   desiredCode: 1234
 --- !u!65 &310531345
 BoxCollider:
@@ -10691,6 +10871,7 @@ GameObject:
   - component: {fileID: 412977841}
   - component: {fileID: 412977840}
   - component: {fileID: 412977839}
+  - component: {fileID: 412977842}
   m_Layer: 5
   m_Name: KeyPadButton7
   m_TagString: Untagged
@@ -10761,7 +10942,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 412977840}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &412977840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10800,6 +10993,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412977837}
   m_CullTransparentMesh: 1
+--- !u!114 &412977842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412977837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &423042030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12550,6 +12757,7 @@ GameObject:
   - component: {fileID: 518027042}
   - component: {fileID: 518027041}
   - component: {fileID: 518027040}
+  - component: {fileID: 518027043}
   m_Layer: 5
   m_Name: KeyPadButton5
   m_TagString: Untagged
@@ -12620,7 +12828,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 518027041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &518027041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12659,6 +12879,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518027038}
   m_CullTransparentMesh: 1
+--- !u!114 &518027043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518027038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &523431978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13171,7 +13405,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17014
+  m_Name: pb_Mesh-4536
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14507,7 +14741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 590e15ce7793440e98d01ef8c6d2ebd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.95197
+      value: 20.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 590e15ce7793440e98d01ef8c6d2ebd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16629,6 +16863,121 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6029283490975109327, guid: 1e5ddd333f89b83429bdc7daab572d0f, type: 3}
   m_PrefabInstance: {fileID: 22673804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &697681692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697681693}
+  - component: {fileID: 697681696}
+  - component: {fileID: 697681695}
+  - component: {fileID: 697681694}
+  m_Layer: 0
+  m_Name: Alert
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &697681693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697681692}
+  m_LocalRotation: {x: -0, y: -0.99967617, z: -0, w: 0.025449226}
+  m_LocalPosition: {x: 3.06, y: 24.86, z: 25.25}
+  m_LocalScale: {x: 0.678, y: 0.678, z: 0.678}
+  m_Children: []
+  m_Father: {fileID: 1504882901}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: -177.083, z: 0}
+--- !u!95 &697681694
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697681692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 861c2aa66947d4643aa3ed9f4462cf15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &697681695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697681692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389c0d33876484845b4971c70f04de18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &697681696
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697681692}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: cf8fad2c85cf83b41a5012d78d9eaed2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 2.57, y: 2.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &700452425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19665,7 +20014,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-15928
+  m_Name: pb_Mesh-3450
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24984,6 +25333,7 @@ GameObject:
   - component: {fileID: 998318248}
   - component: {fileID: 998318247}
   - component: {fileID: 998318246}
+  - component: {fileID: 998318249}
   m_Layer: 5
   m_Name: KeyPadButton4
   m_TagString: Untagged
@@ -25054,7 +25404,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 998318247}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &998318247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25093,6 +25455,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998318244}
   m_CullTransparentMesh: 1
+--- !u!114 &998318249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998318244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1 &999817074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6036172313751639522, guid: 42dc0e9f221ca45829026a5eacf29794, type: 3}
@@ -27134,6 +27510,7 @@ GameObject:
   - component: {fileID: 1094425207}
   - component: {fileID: 1094425206}
   - component: {fileID: 1094425205}
+  - component: {fileID: 1094425208}
   m_Layer: 5
   m_Name: KeyPadButtonHashtag
   m_TagString: Untagged
@@ -27204,7 +27581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1094425206}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &1094425206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27243,6 +27632,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094425203}
   m_CullTransparentMesh: 1
+--- !u!114 &1094425208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094425203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &1095068310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33601,6 +34004,7 @@ GameObject:
   - component: {fileID: 1379936264}
   - component: {fileID: 1379936263}
   - component: {fileID: 1379936262}
+  - component: {fileID: 1379936265}
   m_Layer: 5
   m_Name: KeyPadButton3
   m_TagString: Untagged
@@ -33671,7 +34075,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1379936263}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &1379936263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33710,6 +34126,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379936260}
   m_CullTransparentMesh: 1
+--- !u!114 &1379936265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379936260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &1380283673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35445,6 +35875,7 @@ Transform:
   - {fileID: 1026324875}
   - {fileID: 179215972}
   - {fileID: 310531346}
+  - {fileID: 697681693}
   m_Father: {fileID: 1259063254}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37628,6 +38059,7 @@ GameObject:
   - component: {fileID: 1639634203}
   - component: {fileID: 1639634202}
   - component: {fileID: 1639634201}
+  - component: {fileID: 1639634204}
   m_Layer: 5
   m_Name: KeyPadButton0
   m_TagString: Untagged
@@ -37698,7 +38130,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1639634202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &1639634202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37737,6 +38181,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639634199}
   m_CullTransparentMesh: 1
+--- !u!114 &1639634204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639634199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &1639871654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41092,7 +41550,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-14232
+  m_Name: pb_Mesh-1746
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41292,6 +41750,7 @@ GameObject:
   - component: {fileID: 1806521021}
   - component: {fileID: 1806521020}
   - component: {fileID: 1806521019}
+  - component: {fileID: 1806521022}
   m_Layer: 5
   m_Name: KeyPadButton8
   m_TagString: Untagged
@@ -41362,7 +41821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1806521020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &1806521020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41401,6 +41872,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806521017}
   m_CullTransparentMesh: 1
+--- !u!114 &1806521022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806521017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &1806605090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41519,7 +42004,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-15916
+  m_Name: pb_Mesh-3438
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42509,6 +42994,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7e62db484c13e40988c291ee13ff9243, type: 3}
       propertyPath: m_Name
       value: Door Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e62db484c13e40988c291ee13ff9243, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e62db484c13e40988c291ee13ff9243, type: 3}
@@ -45554,6 +46043,7 @@ GameObject:
   - component: {fileID: 1992218319}
   - component: {fileID: 1992218318}
   - component: {fileID: 1992218317}
+  - component: {fileID: 1992218320}
   m_Layer: 5
   m_Name: KeyPadButton6
   m_TagString: Untagged
@@ -45624,7 +46114,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1992218318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 12078999}
+        m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &1992218318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45663,6 +46165,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992218315}
   m_CullTransparentMesh: 1
+--- !u!114 &1992218320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992218315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa38b265aba64db8945de83ae8341ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 1175402990}
+  desiredCode: 1234
 --- !u!1001 &1994221869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46642,7 +47158,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17230
+  m_Name: pb_Mesh-4752
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47556,7 +48072,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17218
+  m_Name: pb_Mesh-4740
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47874,7 +48390,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13738
+  m_Name: pb_Mesh-1252
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

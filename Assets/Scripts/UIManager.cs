@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public GameObject failPopup;
     public GameObject miniGamePopup;
 
+    public GameObject minigame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class UIManager : MonoBehaviour
             {
                 HideMinigamePopup();
                 Time.timeScale = 1;
+                minigame.GetComponent<MiniGameManager>().revertEnteredCode();
             }
         }
     }
