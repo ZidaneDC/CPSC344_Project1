@@ -73,7 +73,7 @@ public class MiniGameManager : MonoBehaviour
         if (enteredCode.text.Length == 4)
         {
             //code is correct, show player that the codse is valid/correct
-            if(enteredCode.text == desiredCode)
+            if (enteredCode.text == desiredCode)
             {
                 enteredCode.text = "VALID";
             }
