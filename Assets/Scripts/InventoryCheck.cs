@@ -36,7 +36,7 @@ public class InventoryCheck : MonoBehaviour
         {
             //Debug.Log("Entered object range.");
             canInteract = true;
-            DisplayPrompt();
+            uiManager.DisplayInteractionPrompt();
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             //make sure script was obtained
@@ -50,12 +50,12 @@ public class InventoryCheck : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         playerInventory = null;
-        HidePrompt();
+        uiManager.HideInteractionPrompt();
     }
 
     private void CheckInventory()
     {
-        HidePrompt();
+        uiManager.HideInteractionPrompt();
         Debug.Log("Checking player inventory....");
         foreach (string item in itemsNeeded)
         {
@@ -95,14 +95,4 @@ public class InventoryCheck : MonoBehaviour
         audioManager.playErrorSound();
         uiManager.ShowFailPopup();
     }
-    private void DisplayPrompt()
-    {
-        interactionPrompt.SetActive(true);
-    }
-
-    private void HidePrompt()
-    {
-        interactionPrompt.SetActive(false);
-    }
-
 }

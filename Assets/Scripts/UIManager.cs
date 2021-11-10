@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     public GameObject successPopup;
     public GameObject failPopup;
     public GameObject miniGamePopup;
+    public GameObject interactionPrompt;
 
     // Start is called before the first frame update
     void Start()
@@ -69,4 +70,15 @@ public class UIManager : MonoBehaviour
     {
         miniGamePopup.SetActive(false);
     }
+
+    public void DisplayInteractionPrompt()
+    {
+        interactionPrompt.SetActive(true);
+    }
+
+    public void HideInteractionPrompt()
+    {
+        interactionPrompt.SetActive(false);
+    }
+
 }

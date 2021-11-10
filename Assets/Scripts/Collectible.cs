@@ -8,6 +8,7 @@ public class Collectible : MonoBehaviour
     public string objectType;
     public GameObject collectionPrompt;
     public AudioManager audioManager;
+    public UIManager uiManager;
 
     private PlayerInventory playerInventory;
     private bool canCollect;
@@ -30,12 +31,11 @@ public class Collectible : MonoBehaviour
                 playerInventory.inventory.Add(objectType);
                 Debug.Log(objectType + " added to inventory.");
                 //hide ui
-                HidePrompt();
+                uiManager.HideInteractionPrompt();
                 Destroy(gameObject);
             }
         }
     }
-    //OLD: Upon a collider hitting the trigger, this collectible will be destroyed
     //updated version will display a UI popup upon player entering the trigger area
     private void OnTriggerEnter(Collider other)
     {
@@ -44,7 +44,7 @@ public class Collectible : MonoBehaviour
             //Debug.Log("Entered object range.");
             canCollect = true;
             //display ui
-            DisplayPrompt();
+            uiManager.DisplayInteractionPrompt();
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             //make sure script was obtained
@@ -59,16 +59,6 @@ public class Collectible : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         playerInventory = null;
-        HidePrompt();
-    }
-
-    private void DisplayPrompt()
-    {
-        collectionPrompt.SetActive(true);
-    }
-
-    private void HidePrompt()
-    {
-        collectionPrompt.SetActive(false);
+        uiManager.HideInteractionPrompt();
     }
 }

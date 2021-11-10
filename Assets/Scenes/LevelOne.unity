@@ -5959,6 +5959,7 @@ MonoBehaviour:
   objectType: Computer
   collectionPrompt: {fileID: 207338764}
   audioManager: {fileID: 0}
+  uiManager: {fileID: 0}
 --- !u!135 &224690784
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14706,6 +14707,7 @@ MonoBehaviour:
   objectType: Phone
   collectionPrompt: {fileID: 207338764}
   audioManager: {fileID: 1023985187}
+  uiManager: {fileID: 1175402990}
 --- !u!135 &608989401
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20502,6 +20504,7 @@ MonoBehaviour:
   objectType: Phone
   collectionPrompt: {fileID: 207338764}
   audioManager: {fileID: 0}
+  uiManager: {fileID: 0}
 --- !u!64 &843873841
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24146,6 +24149,7 @@ MonoBehaviour:
   objectType: Cellphone
   collectionPrompt: {fileID: 207338764}
   audioManager: {fileID: 0}
+  uiManager: {fileID: 0}
 --- !u!135 &962921197
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29022,6 +29026,7 @@ MonoBehaviour:
   successPopup: {fileID: 1088547200}
   failPopup: {fileID: 815324177}
   miniGamePopup: {fileID: 1142549631}
+  interactionPrompt: {fileID: 207338764}
 --- !u!4 &1175402991
 Transform:
   m_ObjectHideFlags: 0
@@ -40261,6 +40266,7 @@ MonoBehaviour:
   objectType: Cellphone
   collectionPrompt: {fileID: 207338764}
   audioManager: {fileID: 1023985187}
+  uiManager: {fileID: 1175402990}
 --- !u!135 &1741623413
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -45744,6 +45750,7 @@ MonoBehaviour:
   objectType: Computer
   collectionPrompt: {fileID: 207338764}
   audioManager: {fileID: 1023985187}
+  uiManager: {fileID: 1175402990}
 --- !u!135 &1998073823
 SphereCollider:
   m_ObjectHideFlags: 0
