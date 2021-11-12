@@ -1,0 +1,15 @@
+newmtl Plastic
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/3D Assets/Texture Images/360_F_42764522_zujSmnqvS9siZ2AeM5tnhgd1838ViLuX.jpg
+Kd 1 1 1
+d 1
+
+newmtl woodTexture
+map_Kd C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/3D Assets/Texture Images/Materials/woodTexture.jpg
+Kd 1 1 1
+d 1
+
+newmtl Grey_1
+map_Pm C:/Users/adeca/Desktop/GameDev/Github/CPSC344_Project1/Assets/3D Assets/Texture Images/istockphoto-1057639240-612x612.jpg
+Kd 0.8018868 0.8018868 0.8018868
+d 1
+
