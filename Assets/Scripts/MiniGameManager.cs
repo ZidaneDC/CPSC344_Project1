@@ -19,11 +19,61 @@ public class MiniGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check for key pad input
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            enteredCode.text += "0";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            enteredCode.text += "1";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            enteredCode.text += "2";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            enteredCode.text += "3";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            enteredCode.text += "4";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            enteredCode.text += "5";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            enteredCode.text += "6";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            enteredCode.text += "7";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            enteredCode.text += "8";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            enteredCode.text += "9";
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadMultiply))
+        {
+            enteredCode.text += "*";
+        }
+        if (Input.GetKeyDown(KeyCode.Hash))
+        {
+            enteredCode.text += "#";
+        }
+
         //check if four digits have been entered (code is 4 digits)
-        if(enteredCode.text.Length == 4)
+        if (enteredCode.text.Length == 4)
         {
             //code is correct, show player that the codse is valid/correct
-            if(enteredCode.text == desiredCode)
+            if (enteredCode.text == desiredCode)
             {
                 enteredCode.text = "VALID";
             }
@@ -40,13 +90,21 @@ public class MiniGameManager : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             uiManager.ShowMinigamePopup();
-
+            Cursor.visible = true;
         }
     }
 
-    public void OnButtonTap(Text text)
-    {
-        //on button tap, concatenate a string to show the digit the user selected to tap
-        enteredCode.text = enteredCode.text + text;
+    //concatenate entered code string with the text on the button object
+    //public void OnButtonClick(Text text)
+    //{
+    //    enteredCode.text += text;
+    //    Debug.Log("Button pressed!");
+    //}
+
+
+
+    public void revertEnteredCode() {
+        Debug.Log("Reverting code");
+        enteredCode.text = "";
     }
 }
