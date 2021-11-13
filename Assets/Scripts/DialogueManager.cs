@@ -24,8 +24,6 @@ public class DialogueManager : MonoBehaviour
     public GameObject startButton;
     public GameObject loadLevelButton;
 
-    //public AudioClip Aclip;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,14 +40,6 @@ public class DialogueManager : MonoBehaviour
         //buttonPress = false;
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown("space"))
-    //    {
-    //        buttonPress = true;
-    //        Debug.Log("space key down.");
-    //   }
-    //}
 
     public void StartDialogue(Dialogue dialogue) //on start button press, the button will deactivate and the dialogue ui will apppear
     {
