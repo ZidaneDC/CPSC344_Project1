@@ -10,6 +10,7 @@ public class MiniGameManager : MonoBehaviour
     public string desiredCode = "1234";
     public GameObject door;
     public bool codeCracked = false;
+    public AudioManager audiomanager;
     
 
     // Start is called before the first frame update
@@ -78,6 +79,7 @@ public class MiniGameManager : MonoBehaviour
             if (enteredCode.text == desiredCode)
             {
                 enteredCode.text = "VALID";
+                audiomanager.playSuccessSound();
                 codeCracked = true;
                 door.SetActive(false);
             }
@@ -85,6 +87,7 @@ public class MiniGameManager : MonoBehaviour
             else
             {
                 enteredCode.text = "INVALID";
+                audiomanager.playErrorSound();
             }
         }
     }
