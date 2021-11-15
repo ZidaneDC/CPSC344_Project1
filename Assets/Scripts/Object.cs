@@ -10,14 +10,8 @@ public class Object : MonoBehaviour
     public UIManager uiManager;
 
     protected PlayerInventory playerInventory;
-    protected bool canInteract;
+    protected bool canInteract = false;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        canInteract = false;
-    }
 
     //display a UI popup upon player entering the trigger area
     private void OnTriggerEnter(Collider other)

@@ -2,22 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryCheck : MonoBehaviour
+public class InventoryCheck : Object
 {
-    public GameObject interactionPrompt;
     public List<string> itemsNeeded = new List<string>();
-    public UIManager uiManager;
     public AudioManager audioManager;
 
-    private PlayerInventory playerInventory;
-    private bool canInteract;
-    private bool canPass;
+    private bool canPass = false;
 
-    private void Start()
-    {
-        canInteract = false;
-        canPass = false;
-    }
+
     private void Update()
     {
         if (canInteract)
@@ -28,29 +20,6 @@ public class InventoryCheck : MonoBehaviour
                 CheckInventory();
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            //Debug.Log("Entered object range.");
-            canInteract = true;
-            uiManager.DisplayInteractionPrompt();
-            //find player script
-            playerInventory = other.gameObject.GetComponent<PlayerInventory>();
-            //make sure script was obtained
-            //if (playerInventory != null)
-            //{
-            //    Debug.Log("Obtained player inventory.");
-            //}
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        playerInventory = null;
-        uiManager.HideInteractionPrompt();
     }
 
     private void CheckInventory()

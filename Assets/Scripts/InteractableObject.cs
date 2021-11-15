@@ -10,6 +10,8 @@ public class InteractableObject : Object
 
     //possible secondary item that can still be picked up?
     public string item;
+    public string[] interactionText;
+    public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
     private bool itemObtained = false; //will prevent player from constantly inspecting object and getting the item infinitely
 
     // Update is called once per frame
