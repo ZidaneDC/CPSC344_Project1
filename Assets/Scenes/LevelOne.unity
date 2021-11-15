@@ -9118,6 +9118,8 @@ MonoBehaviour:
   uiManager: {fileID: 1175402990}
   enteredCode: {fileID: 1500956991}
   desiredCode: 1234
+  door: {fileID: 1219004478}
+  codeCracked: 0
 --- !u!65 &310531345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31246,6 +31248,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: e38a1adf88b4f45a58556f0847ab8a04, type: 3}
+--- !u!1 &1219004478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 14ac1660a6a85754eba47f9a6ec45c6e, type: 3}
+  m_PrefabInstance: {fileID: 263390367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1222377924
 PrefabInstance:
   m_ObjectHideFlags: 0
