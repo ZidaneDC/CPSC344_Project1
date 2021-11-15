@@ -12,6 +12,8 @@ public class InteractableObject : Object
     public string item;
     public string[] interactionText;
     public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
+    //potentially an image display for stuff like the id card and cubicle labels
+
     private bool itemObtained = false; //will prevent player from constantly inspecting object and getting the item infinitely
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class InteractableObject : Object
                 }
 
                 //HIDE DIALOGUE UI
-                uiManager.SetLogText(objectType + " added to inventory.");
+                uiManager.SetLogText(item + " added to inventory.");
             }
         }
     }

@@ -9,7 +9,6 @@ public class InventoryCheck : Object
 
     private bool canPass = false;
 
-
     private void Update()
     {
         if (canInteract)
@@ -25,7 +24,7 @@ public class InventoryCheck : Object
     private void CheckInventory()
     {
         uiManager.HideInteractionPrompt();
-        Debug.Log("Checking player inventory....");
+        //Debug.Log("Checking player inventory....");
         foreach (string item in itemsNeeded)
         {
             if (playerInventory.inventory.Contains(item))

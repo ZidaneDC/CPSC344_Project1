@@ -44163,10 +44163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9110302c88421b045918f4594df9da62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionPrompt: {fileID: 207338764}
+  objectType: 
+  uiManager: {fileID: 1175402990}
   itemsNeeded:
   - ID
-  uiManager: {fileID: 1175402990}
   audioManager: {fileID: 1023985187}
 --- !u!65 &1847996906
 BoxCollider:
@@ -51973,7 +51973,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: Phone
   uiManager: {fileID: 1175402990}
-  item: 
+  item: Password
+  interactionText: []
+  secondaryText: []
 --- !u!1 &1126872669694384968
 GameObject:
   m_ObjectHideFlags: 0
