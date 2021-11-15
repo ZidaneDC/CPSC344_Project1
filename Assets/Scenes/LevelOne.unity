@@ -9118,6 +9118,8 @@ MonoBehaviour:
   uiManager: {fileID: 1175402990}
   enteredCode: {fileID: 1500956991}
   desiredCode: 1234
+  door: {fileID: 0}
+  codeCracked: 0
 --- !u!65 &310531345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14958,9 +14960,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: Phone
-  collectionPrompt: {fileID: 207338764}
-  audioManager: {fileID: 1023985187}
   uiManager: {fileID: 1175402990}
+  audioManager: {fileID: 1023985187}
 --- !u!135 &608989401
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22130,9 +22131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: Phone
-  collectionPrompt: {fileID: 207338764}
-  audioManager: {fileID: 0}
   uiManager: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!64 &843873841
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42011,9 +42011,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: Cellphone
-  collectionPrompt: {fileID: 207338764}
-  audioManager: {fileID: 1023985187}
   uiManager: {fileID: 1175402990}
+  audioManager: {fileID: 1023985187}
 --- !u!135 &1741623413
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -47365,15 +47364,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149245394701}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 713d9e19f7fafe14e8390e1bac609205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: Phone
-  collectionPrompt: {fileID: 207338764}
-  audioManager: {fileID: 1023985187}
   uiManager: {fileID: 1175402990}
+  audioManager: {fileID: 1023985187}
 --- !u!135 &1998073823
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -51953,6 +51951,7 @@ GameObject:
   - component: {fileID: 543450653517276599}
   - component: {fileID: 1998073823}
   - component: {fileID: 1998073822}
+  - component: {fileID: 919132149245394702}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -51960,6 +51959,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132149245394702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149245394701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db8079bb3b153849ac6a3cd38fe205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: Phone
+  uiManager: {fileID: 1175402990}
+  item: 
 --- !u!1 &1126872669694384968
 GameObject:
   m_ObjectHideFlags: 0
@@ -51991,9 +52005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: ID
-  collectionPrompt: {fileID: 207338764}
-  audioManager: {fileID: 1023985187}
   uiManager: {fileID: 1175402990}
+  audioManager: {fileID: 1023985187}
 --- !u!135 &1126872669694384970
 SphereCollider:
   m_ObjectHideFlags: 0

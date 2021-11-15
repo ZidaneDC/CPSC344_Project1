@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
         HideSuccessPopup();
         HideFailPopup();
         HideMinigamePopup();
+        HideInteractionPrompt();
         actionLog.SetActive(false);
     }
 
