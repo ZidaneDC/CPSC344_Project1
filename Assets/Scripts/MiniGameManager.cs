@@ -82,6 +82,7 @@ public class MiniGameManager : MonoBehaviour
                 audiomanager.playSuccessSound();
                 codeCracked = true;
                 door.SetActive(false);
+                uiManager.SetLogText("Manager's office unlocked");
             }
             //else, code is entered incorrectly
             else
