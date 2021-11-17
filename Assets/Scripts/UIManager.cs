@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public GameObject miniGamePopup;
     public GameObject interactionPrompt;
     public GameObject actionLog;
+    public GameObject listPopup;
+    public GameObject listPrompt;
     public Text logText;
 
     public GameObject minigame;
@@ -23,17 +25,19 @@ public class UIManager : MonoBehaviour
         HideFailPopup();
         HideMinigamePopup();
         HideInteractionPrompt();
+        HideListPopup();
         actionLog.SetActive(false);
     }
 
     private void Update()
     {
-        if(successPopup.activeInHierarchy == true || failPopup.activeInHierarchy == true)
+        if(successPopup.activeInHierarchy == true || failPopup.activeInHierarchy == true || listPopup.activeInHierarchy)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 HideFailPopup();
                 HideSuccessPopup();
+                HideListPopup();
             }
         }
 
@@ -48,6 +52,12 @@ public class UIManager : MonoBehaviour
                 Time.timeScale = 1;
                 minigame.GetComponent<MiniGameManager>().revertEnteredCode();
             }
+        }
+
+        //specific for list popup
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            ShowListPopup();
         }
     }
 
@@ -104,6 +114,28 @@ public class UIManager : MonoBehaviour
     public void HideInteractionPrompt()
     {
         interactionPrompt.SetActive(false);
+    }
+
+    public void ShowListPopup()
+    {
+        listPopup.SetActive(true);
+        HideListPrompt();
+    }
+
+    public void HideListPopup()
+    {
+        listPopup.SetActive(false);
+        ShowListPrompt();
+    }
+
+    public void ShowListPrompt()
+    {
+        listPrompt.SetActive(true);
+    }
+
+    public void HideListPrompt()
+    {
+        listPrompt.SetActive(false);
     }
 
 }
