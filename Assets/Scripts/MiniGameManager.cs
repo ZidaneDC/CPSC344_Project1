@@ -8,6 +8,8 @@ public class MiniGameManager : MonoBehaviour
     public UIManager uiManager;
     public Text enteredCode;
     public string desiredCode = "1234";
+    public GameObject door;
+    public bool codeCracked = false;
     
 
     // Start is called before the first frame update
@@ -76,6 +78,8 @@ public class MiniGameManager : MonoBehaviour
             if (enteredCode.text == desiredCode)
             {
                 enteredCode.text = "VALID";
+                codeCracked = true;
+                door.SetActive(false);
             }
             //else, code is entered incorrectly
             else
@@ -87,10 +91,12 @@ public class MiniGameManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (!codeCracked)
         {
-            uiManager.ShowMinigamePopup();
-            Cursor.visible = true;
+            if (other.gameObject.tag == "Player")
+            {
+                uiManager.ShowMinigamePopup();
+            }
         }
     }
 
