@@ -10,7 +10,9 @@ public class InteractableObject : Object
 
     //possible secondary item that can still be picked up?
     public string item;
+    [TextArea(3, 10)]
     public string[] interactionText;
+    [TextArea(3, 10)]
     public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
     //potentially an image display for stuff like the id card and cubicle labels
 
@@ -19,21 +21,26 @@ public class InteractableObject : Object
     // Update is called once per frame
     void Update()
     {
-        if (canInteract)
+        if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            uiManager.HideInteractionPrompt();
+            //DISPLAY DIALOGUE UI
+            if (itemObtained == false || item == null)
             {
-                uiManager.HideInteractionPrompt();
-                //DISPLAY DIALOGUE UI
-                if (item != null)
-                {
-                    playerInventory.inventory.Add(item);
-                    itemObtained = true;
-                }
-
-                //HIDE DIALOGUE UI
-                uiManager.SetLogText(item + " added to inventory.");
+                playerInventory.inventory.Add(item);
+                itemObtained = true;
+                //start dialogue with first set of sentences
+                dialogueController.StartDialogue(interactionText);
             }
+            else
+            {
+                itemObtained = true;
+                //start dialogue with second set of sentences
+                dialogueController.StartDialogue(secondaryText);
+            }
+
+            uiManager.SetLogText(item + " added to inventory.");
+            //HIDE DIALOGUE UI
         }
     }
 }

@@ -10,6 +10,7 @@ public class Object : MonoBehaviour
     public UIManager uiManager;
 
     protected PlayerInventory playerInventory;
+    protected DialogueSystem dialogueController;
     protected bool canInteract = false;
 
 
@@ -21,9 +22,10 @@ public class Object : MonoBehaviour
             //Debug.Log("Entered object range.");
             canInteract = true;
             //display ui
-            uiManager.DisplayInteractionPrompt();
+            uiManager.ShowInteractionPrompt();
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
+            dialogueController = other.gameObject.GetComponent<DialogueSystem>();
             //make sure script was obtained
             //if (playerInventory != null)
             //{

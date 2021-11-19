@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     public GameObject miniGamePopup;
     public GameObject interactionPrompt;
     public GameObject actionLog;
+    public GameObject dialogueBox;
+
+    public Text dialogueText;
     public Text logText;
 
     public GameObject minigame;
@@ -24,6 +27,7 @@ public class UIManager : MonoBehaviour
         HideMinigamePopup();
         HideInteractionPrompt();
         actionLog.SetActive(false);
+        dialogueText.text = "";
     }
 
     private void Update()
@@ -60,7 +64,7 @@ public class UIManager : MonoBehaviour
     //activate a bit of ui/a game object for a set amount of time
     private IEnumerator TimedUIPopup(GameObject toEnable)
     {
-        Debug.Log("Coroutine Activated.");
+        //Debug.Log("Coroutine Activated.");
         toEnable.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         toEnable.SetActive(false);
@@ -96,7 +100,7 @@ public class UIManager : MonoBehaviour
         miniGamePopup.SetActive(false);
     }
 
-    public void DisplayInteractionPrompt()
+    public void ShowInteractionPrompt()
     {
         interactionPrompt.SetActive(true);
     }
@@ -106,4 +110,13 @@ public class UIManager : MonoBehaviour
         interactionPrompt.SetActive(false);
     }
 
+    public void ShowDialogueBox()
+    {
+        dialogueBox.SetActive(true);
+    }
+
+    public void HideDialogueBox()
+    {
+        dialogueBox.SetActive(false);
+    }
 }
