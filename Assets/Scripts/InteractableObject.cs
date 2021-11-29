@@ -24,16 +24,19 @@ public class InteractableObject : Object
             if (Input.GetKeyDown(KeyCode.E))
             {
                 uiManager.HideInteractionPrompt();
-                if (item != null || itemObtained == false)
+                if (itemObtained == false)
                 {
                     playerInventory.inventory.Add(item);
                     itemObtained = true;
                     //DISPLAY DIALOGUE UI
                     //RUN DIALOGUE FUNCTIONALITY
-                    interactionText.StartInteraction(primaryText);
-
+                    interactionText.StartInteraction(primaryText, item);
                     //HIDE DIALOGUE UI
-                    uiManager.SetLogText(item + " added to inventory.");
+                }
+                
+                else if(itemObtained == true)
+                {
+                    interactionText.StartInteraction(secondaryText);
                 }
             }
         }
