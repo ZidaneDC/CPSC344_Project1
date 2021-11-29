@@ -10,8 +10,8 @@ public class Object : MonoBehaviour
     public UIManager uiManager;
 
     protected PlayerInventory playerInventory;
+    protected InteractionText interactionText;
     protected bool canInteract = false;
-
 
     //display a UI popup upon player entering the trigger area
     private void OnTriggerEnter(Collider other)
@@ -24,6 +24,7 @@ public class Object : MonoBehaviour
             uiManager.DisplayInteractionPrompt();
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
+            interactionText = other.gameObject.GetComponent<InteractionText>();
             //make sure script was obtained
             //if (playerInventory != null)
             //{

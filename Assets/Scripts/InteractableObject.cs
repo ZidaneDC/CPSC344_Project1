@@ -10,7 +10,7 @@ public class InteractableObject : Object
 
     //possible secondary item that can still be picked up?
     public string item;
-    public string[] interactionText;
+    public string[] primaryText;
     public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
     //potentially an image display for stuff like the id card and cubicle labels
 
@@ -24,15 +24,17 @@ public class InteractableObject : Object
             if (Input.GetKeyDown(KeyCode.E))
             {
                 uiManager.HideInteractionPrompt();
-                //DISPLAY DIALOGUE UI
-                if (item != null)
+                if (item != null || itemObtained == false)
                 {
                     playerInventory.inventory.Add(item);
                     itemObtained = true;
-                }
+                    //DISPLAY DIALOGUE UI
+                    //RUN DIALOGUE FUNCTIONALITY
+                    interactionText.StartInteraction(primaryText);
 
-                //HIDE DIALOGUE UI
-                uiManager.SetLogText(item + " added to inventory.");
+                    //HIDE DIALOGUE UI
+                    uiManager.SetLogText(item + " added to inventory.");
+                }
             }
         }
     }

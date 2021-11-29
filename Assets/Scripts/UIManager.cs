@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     public GameObject interactionPrompt;
     public GameObject actionLog;
     public Text logText;
+    public GameObject interactionTextBox;
+    public Text interactionText;
 
     public GameObject minigame;
 
@@ -24,6 +26,7 @@ public class UIManager : MonoBehaviour
         HideMinigamePopup();
         HideInteractionPrompt();
         actionLog.SetActive(false);
+        HideInteractionText();
     }
 
     private void Update()
@@ -104,6 +107,16 @@ public class UIManager : MonoBehaviour
     public void HideInteractionPrompt()
     {
         interactionPrompt.SetActive(false);
+    }
+
+    public void DisplayInteractionText()
+    {
+        interactionTextBox.SetActive(true);
+    }
+
+    public void HideInteractionText()
+    {
+        interactionTextBox.SetActive(false);
     }
 
 }
