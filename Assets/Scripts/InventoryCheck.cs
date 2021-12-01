@@ -6,6 +6,7 @@ public class InventoryCheck : Object
 {
     public List<string> itemsNeeded = new List<string>();
     public AudioManager audioManager;
+    public GameObject lineOnNote;
 
     private bool canPass = false;
 
@@ -16,12 +17,13 @@ public class InventoryCheck : Object
             //wait for player input, upon which the object will be destroyed and the object added to player inventory
             if (Input.GetKeyDown(KeyCode.E))
             {
-                CheckInventory();
+                CheckInventory(lineOnNote);
             }
         }
     }
 
-    private void CheckInventory()
+    //takes in line to cross off task when player has completed it
+    private void CheckInventory(GameObject noteline)
     {
         uiManager.HideInteractionPrompt();
         //Debug.Log("Checking player inventory....");
@@ -41,6 +43,7 @@ public class InventoryCheck : Object
         if (canPass)
         {
             CheckPassed();
+            noteline.SetActive(true);
         }
 
         else
@@ -63,4 +66,5 @@ public class InventoryCheck : Object
         audioManager.playErrorSound();
         uiManager.ShowFailPopup();
     }
+
 }

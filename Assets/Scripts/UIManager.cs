@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Text logText;
     public GameObject interactionTextBox;
     public Text interactionText;
+    public GameObject notePopup;
 
     public GameObject minigame;
 
@@ -27,16 +28,18 @@ public class UIManager : MonoBehaviour
         HideInteractionPrompt();
         actionLog.SetActive(false);
         HideInteractionText();
+        ShowNotePopUp();
     }
 
     private void Update()
     {
-        if(successPopup.activeInHierarchy == true || failPopup.activeInHierarchy == true)
+        if(successPopup.activeInHierarchy == true || failPopup.activeInHierarchy == true || notePopup.activeInHierarchy)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 HideFailPopup();
                 HideSuccessPopup();
+                HideNotePopUp();
             }
         }
 
@@ -119,4 +122,13 @@ public class UIManager : MonoBehaviour
         interactionTextBox.SetActive(false);
     }
 
+    public void ShowNotePopUp()
+    {
+        notePopup.SetActive(true);
+    }
+
+    public void HideNotePopUp()
+    {
+        notePopup.SetActive(false);
+    }
 }
