@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
         //specific for minigame popup
         if (miniGamePopup.activeInHierarchy)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
 
             if (Input.GetKeyDown(KeyCode.Q))
             {

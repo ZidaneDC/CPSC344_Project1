@@ -1,0 +1,8 @@
+newmtl ChairMaterial
+Kd 0.4121033 0.3941816 0.3941816
+d 1
+
+newmtl cakeWriting
+Kd 0.5849056 0.5636206 0.482823
+d 1
+
