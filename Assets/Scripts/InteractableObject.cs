@@ -34,7 +34,7 @@ public class InteractableObject : Object
                     //HIDE DIALOGUE UI
                 }
                 
-                else if(itemObtained == true)
+                else if(itemObtained == true && secondaryText.Length != 0)
                 {
                     interactionText.StartInteraction(secondaryText);
                 }
