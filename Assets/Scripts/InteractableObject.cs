@@ -13,6 +13,7 @@ public class InteractableObject : Object
     public string[] primaryText;
     public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
     //potentially an image display for stuff like the id card and cubicle labels
+    public GameObject audioSource;
 
     private bool itemObtained = false; //will prevent player from constantly inspecting object and getting the item infinitely
 
@@ -32,6 +33,7 @@ public class InteractableObject : Object
                     //RUN DIALOGUE FUNCTIONALITY
                     interactionText.StartInteraction(primaryText, item);
                     //HIDE DIALOGUE UI
+                    audioSource.SetActive(false);
                 }
                 
                 else if(itemObtained == true && secondaryText.Length != 0)
