@@ -1,0 +1,8 @@
+newmtl deskTop
+Kd 0.745283 0.6925507 0.6925507
+d 1
+
+newmtl lightMaterial
+Kd 0.5849056 0.5636206 0.482823
+d 0.4196078
+

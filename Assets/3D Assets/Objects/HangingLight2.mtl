@@ -1,0 +1,8 @@
+newmtl lightMaterial
+Kd 0.5849056 0.5636206 0.482823
+d 0.4196078
+
+newmtl deskBottom
+Kd 0.2358491 0.2213866 0.2213866
+d 1
+
