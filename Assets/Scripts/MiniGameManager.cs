@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MiniGameManager : MonoBehaviour
 {
     public UIManager uiManager;
+    public AudioManager audManager;
     public Text enteredCode;
     public string desiredCode = "1234";
     public GameObject door;
@@ -77,14 +78,18 @@ public class MiniGameManager : MonoBehaviour
             //code is correct, show player that the code is valid/correct
             if (enteredCode.text == desiredCode)
             {
+                Debug.Log("code is correct!");
                 enteredCode.text = "VALID";
                 codeCracked = true;
                 door.SetActive(false);
+                audManager.playSuccessSound();
             }
-            //else, code is entered incorrectly
             else
             {
-                enteredCode.text = "INVALID";
+                if (door.activeInHierarchy)
+                {
+                    enteredCode.text = "INVALID";
+                }
             }
         }
     }
