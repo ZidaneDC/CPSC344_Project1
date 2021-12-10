@@ -10,7 +10,9 @@ public class InteractableObject : Object
 
     //possible secondary item that can still be picked up?
     public string item;
+    [TextArea(3, 10)]
     public string[] primaryText;
+    [TextArea(3, 10)]
     public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
     //potentially an image display for stuff like the id card and cubicle labels
     public GameObject audioSource;
