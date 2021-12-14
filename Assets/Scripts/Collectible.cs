@@ -17,7 +17,6 @@ public class Collectible : Object
                 //send information to player inventory
                 audioManager.playPickupSound();
                 playerInventory.inventory.Add(objectType);
-                //Debug.Log(objectType + " added to inventory.");
                 //hide ui
                 uiManager.HideInteractionPrompt();
                 uiManager.SetLogText(objectType + " added to inventory.");

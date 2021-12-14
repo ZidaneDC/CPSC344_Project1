@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StarterAssets;
 
 public class InteractionText : MonoBehaviour
 {
     public UIManager uiManager;
-   
+    
+    private StarterAssetsInputs inputSystem;
+
     private Text displayedText;
     private string itemToObtain;
     private string[] sentencesToDisplay;
@@ -17,10 +20,13 @@ public class InteractionText : MonoBehaviour
     {
         displayedText = uiManager.interactionText;
         displayedText.text = "";
+        inputSystem = GameObject.Find("Player").GetComponentInChildren<StarterAssetsInputs>(); //FIX
     }
 
     public void StartInteraction(string[] sentences, string item)
     {
+        //inputSystem = inputSys;
+        inputSystem.cursorInputForLook = false; // FIX
         uiManager.DisplayInteractionText();
         sentencesToDisplay = sentences;
         itemToObtain = item;
@@ -30,6 +36,8 @@ public class InteractionText : MonoBehaviour
 
     public void StartInteraction(string[] sentences)
     {
+        //inputSystem = inputSys;
+        inputSystem.cursorInputForLook = false; // FIX
         uiManager.DisplayInteractionText();
         sentencesToDisplay = sentences;
         itemToObtain = "";
@@ -53,7 +61,10 @@ public class InteractionText : MonoBehaviour
     public void EndInteraction()
     {
         uiManager.HideInteractionText();
+        inputSystem.cursorInputForLook = true; //FIX
         displayedText.text = "";
+        currSentence = "";
+        sentenceCount = 0;
         if(itemToObtain != "")
         {
             uiManager.SetLogText(itemToObtain + " added to inventory.");

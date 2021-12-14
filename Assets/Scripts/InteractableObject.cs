@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class InteractableObject : Object
 {
     //this class is for objects that when interacted with, display dialogue ui/information and don't destroy themselves after
 
     //add variable reference to future dialogue UI class here
 
-    //possible secondary item that can still be picked up?
     public string item;
     [TextArea(3, 10)]
     public string[] primaryText;
     [TextArea(3, 10)]
     public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
-    //potentially an image display for stuff like the id card and cubicle labels
     public GameObject audioSource;
 
     private bool itemObtained = false; //will prevent player from constantly inspecting object and getting the item infinitely
@@ -27,20 +26,23 @@ public class InteractableObject : Object
             if (Input.GetKeyDown(KeyCode.E))
             {
                 uiManager.HideInteractionPrompt();
+
                 if (itemObtained == false)
                 {
                     playerInventory.inventory.Add(item);
                     itemObtained = true;
-                    //DISPLAY DIALOGUE UI
-                    //RUN DIALOGUE FUNCTIONALITY
                     interactionText.StartInteraction(primaryText, item);
-                    //HIDE DIALOGUE UI
                     audioSource.SetActive(false);
                 }
                 
                 else if(itemObtained == true && secondaryText.Length != 0)
                 {
                     interactionText.StartInteraction(secondaryText);
+                }
+
+                else
+                {
+                    interactionText.StartInteraction(primaryText, item);
                 }
             }
         }

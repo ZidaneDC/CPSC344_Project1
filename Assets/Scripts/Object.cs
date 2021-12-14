@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class Object : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Object : MonoBehaviour
 
     protected PlayerInventory playerInventory;
     protected InteractionText interactionText;
+    protected StarterAssetsInputs inputSystem;
     protected bool canInteract = false;
 
     //display a UI popup upon player entering the trigger area
@@ -25,10 +27,11 @@ public class Object : MonoBehaviour
             //find player script
             playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             interactionText = other.gameObject.GetComponent<InteractionText>();
+            inputSystem = other.gameObject.GetComponentInChildren<StarterAssetsInputs>();
             //make sure script was obtained
-            //if (playerInventory != null)
+            //if (inputsystem != null)
             //{
-            //    Debug.Log("Obtained player inventory.");
+            //    debug.log("obtained input system.");
             //}
         }
     }
