@@ -13,7 +13,10 @@ public class SceneLoader : MonoBehaviour
     public void LoadLevelOne()
     {
         SceneManager.LoadScene("LevelOne");
-
     }
 
+    public void LoadEndingScreen()
+    {
+        SceneManager.LoadScene("EndingStoryScreen");
+    }
 }
