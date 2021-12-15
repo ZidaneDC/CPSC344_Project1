@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using StarterAssets;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,16 +20,20 @@ public class UIManager : MonoBehaviour
 
     public GameObject minigame;
 
+    protected StarterAssetsInputs inputSystem;
+
     // Start is called before the first frame update
     void Start()
     {
-        HideSuccessPopup();
-        HideFailPopup();
+        successPopup.SetActive(false);
+        failPopup.SetActive(false);
         HideMinigamePopup();
         HideInteractionPrompt();
         actionLog.SetActive(false);
         HideInteractionText();
         ShowNotePopUp();
+
+        inputSystem = GameObject.Find("Player").GetComponentInChildren<StarterAssetsInputs>();
     }
 
     private void Update()
@@ -75,21 +80,25 @@ public class UIManager : MonoBehaviour
     public void HideFailPopup()
     {
         failPopup.SetActive(false);
+        inputSystem.cursorInputForLook = true;
     }
 
     public void ShowFailPopup()
     {
         failPopup.SetActive(true);
+        inputSystem.cursorInputForLook = false;
     }
 
     public void HideSuccessPopup()
     {
         successPopup.SetActive(false);
+        inputSystem.cursorInputForLook = true;
     }
 
     public void ShowSuccessPopup()
     {
         successPopup.SetActive(true);
+        inputSystem.cursorInputForLook = false;
     }
 
     public void ShowMinigamePopup()

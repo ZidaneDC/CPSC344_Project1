@@ -25,24 +25,22 @@ public class InteractionText : MonoBehaviour
 
     public void StartInteraction(string[] sentences, string item)
     {
-        //inputSystem = inputSys;
         inputSystem.cursorInputForLook = false; // FIX
-        uiManager.DisplayInteractionText();
         sentencesToDisplay = sentences;
         itemToObtain = item;
         sentenceCount = 0;
         displayedText.text = sentencesToDisplay[0];
+        uiManager.DisplayInteractionText();
     }
 
     public void StartInteraction(string[] sentences)
     {
-        //inputSystem = inputSys;
         inputSystem.cursorInputForLook = false; // FIX
-        uiManager.DisplayInteractionText();
         sentencesToDisplay = sentences;
         itemToObtain = "";
         sentenceCount = 0;
         displayedText.text = sentencesToDisplay[0];
+        uiManager.DisplayInteractionText();
     }
 
     public void DisplayNextSentence() //will be called by button click
@@ -65,7 +63,7 @@ public class InteractionText : MonoBehaviour
         displayedText.text = "";
         currSentence = "";
         sentenceCount = 0;
-        if(itemToObtain != "")
+        if (itemToObtain != "")
         {
             uiManager.SetLogText(itemToObtain + " added to inventory.");
         }

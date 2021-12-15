@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7229647686570237870}
+  - component: {fileID: 4426762612943100622}
   - component: {fileID: 7229647686570237867}
   - component: {fileID: 7229647686570237866}
   - component: {fileID: 7229647686570237869}
@@ -35,6 +36,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4426762612943100622
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229647686570237857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4531198
+  m_Center: {x: 0.4999962, y: 0.14999998, z: -0.9581201}
 --- !u!114 &7229647686570237867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +66,7 @@ MonoBehaviour:
   item: 
   primaryText: []
   secondaryText: []
+  audioSource: {fileID: 0}
 --- !u!114 &7229647686570237866
 MonoBehaviour:
   m_ObjectHideFlags: 0

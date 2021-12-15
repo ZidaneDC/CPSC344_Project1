@@ -40,10 +40,10 @@ public class InteractableObject : Object
                     interactionText.StartInteraction(secondaryText);
                 }
 
-                else
-                {
-                    interactionText.StartInteraction(primaryText, item);
-                }
+                //else
+                //{
+                //    interactionText.StartInteraction(primaryText, item);
+                //}
             }
         }
     }
