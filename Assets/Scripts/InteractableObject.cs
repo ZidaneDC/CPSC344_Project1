@@ -45,7 +45,7 @@ public class InteractableObject : Object
                     interactionText.StartInteraction(primaryText, item);
                     if(audioObject != null)
                     {
-                        //audioObject.SetActive(false);
+                        audioObject.SetActive(false);
                     }
                 }
                 
