@@ -15,7 +15,6 @@ public class DialogueManager : MonoBehaviour
     SceneLoader sceneLoad;
 
     public float textSpeed;
-
     //variable for array with listPopUps
     public GameObject[] titlePopUps;
 
@@ -24,7 +23,6 @@ public class DialogueManager : MonoBehaviour
     public GameObject continueButton;
     public GameObject startButton;
     public GameObject loadLevelButton;
-    public GameObject replayButton;
     public GameObject endGameButton;
 
     // Start is called before the first frame update
@@ -33,7 +31,6 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         continueButton.SetActive(false);
         loadLevelButton.SetActive(false);
-        replayButton.SetActive(false);
         endGameButton.SetActive(false);
 
         //looping through popUps to disable them on start
@@ -148,7 +145,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        replayButton.SetActive(true);
         endGameButton.SetActive(true);
         StartCoroutine(loopThroughPopUps());
     }
