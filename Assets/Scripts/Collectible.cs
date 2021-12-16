@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class Collectible : Object
 {
     public AudioManager audioManager;
+    public GameObject infoCollectedPopup;
+
+    public void Start()
+    {
+        infoCollectedPopup.SetActive(false);
+    }
 
     private void Update()
     {
@@ -23,6 +29,11 @@ public class Collectible : Object
                 uiManager.SetLogText(objectType + " added to inventory.");
                 Destroy(gameObject);
             }
+        }
+
+        if (playerInventory.inventory.Contains("Cellphone"))
+        {
+            infoCollectedPopup.SetActive(true);
         }
     }
 }

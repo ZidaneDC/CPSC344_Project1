@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
         startButton.SetActive(false);
         animator.SetBool("IsOpen", true);
         continueButton.SetActive(true);
+        endGameButton.SetActive(true);
 
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -145,17 +146,11 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        endGameButton.SetActive(true);
         StartCoroutine(loopThroughPopUps());
     }
 
     public void EndGame()
     {
         Application.Quit();
-    }
-
-    public void LoadStoryScreen()
-    {
-        sceneLoad.LoadStoryScene();
     }
 }
