@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
         startButton.SetActive(false);
         animator.SetBool("IsOpen", true);
         continueButton.SetActive(true);
+        loadLevelButton.SetActive(true);
         endGameButton.SetActive(true);
 
         nameText.text = dialogue.name;

@@ -12,6 +12,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadLevelOne()
     {
+        Debug.Log("Loading level one...");
         SceneManager.LoadScene("LevelOne");
     }
 
