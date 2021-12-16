@@ -2,7 +2,12 @@
  Level Design 2 Project 1
  Zidane De Cantuaria
  Mica Marietta
+ 
+Build Instructions:
+- Open the .exe in the build folder
 
+Play Instructions:
+- Complete the tasks in the office to complete the level
 
 User Story:
 
