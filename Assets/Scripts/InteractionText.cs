@@ -31,6 +31,7 @@ public class InteractionText : MonoBehaviour
         sentenceCount = 0;
         displayedText.text = sentencesToDisplay[0];
         uiManager.DisplayInteractionText();
+        //Debug.Log(displayedText.text);
     }
 
     public void StartInteraction(string[] sentences)
@@ -41,6 +42,7 @@ public class InteractionText : MonoBehaviour
         sentenceCount = 0;
         displayedText.text = sentencesToDisplay[0];
         uiManager.DisplayInteractionText();
+        //Debug.Log(displayedText.text);
     }
 
     public void DisplayNextSentence() //will be called by button click
@@ -54,6 +56,7 @@ public class InteractionText : MonoBehaviour
         }
         //if not the end of the array, update text to next sentence
         displayedText.text = sentencesToDisplay[sentenceCount];
+        //Debug.Log(displayedText.text);
     }
 
     public void EndInteraction()

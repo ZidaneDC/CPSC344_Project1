@@ -26,13 +26,20 @@ public class InteractableObject : Object
             if (Input.GetKeyDown(KeyCode.E))
             {
                 uiManager.HideInteractionPrompt();
+                canInteract = false;
 
                 if (itemObtained == false)
                 {
-                    playerInventory.inventory.Add(item);
+                    if(item != "")
+                    {
+                        playerInventory.inventory.Add(item);
+                    }
                     itemObtained = true;
                     interactionText.StartInteraction(primaryText, item);
-                    audioSource.SetActive(false);
+                    if(audioSource != null)
+                    {
+                        audioSource.SetActive(false);
+                    }
                 }
                 
                 else if(itemObtained == true && secondaryText.Length != 0)

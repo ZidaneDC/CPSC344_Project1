@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
     //activate a bit of ui/a game object for a set amount of time
     private IEnumerator TimedUIPopup(GameObject toEnable)
     {
-        Debug.Log("Coroutine Activated.");
+        //Debug.Log("Coroutine Activated.");
         toEnable.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         toEnable.SetActive(false);

@@ -26009,7 +26009,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6368
+  m_Name: pb_Mesh63218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59094,11 +59094,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229647686570237867, guid: 39ca6cc442454f64b82753a38a725a8c, type: 3}
       propertyPath: secondaryText.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7229647686570237867, guid: 39ca6cc442454f64b82753a38a725a8c, type: 3}
       propertyPath: primaryText.Array.data[0]
       value: The nameplate on this cubicle says "Prate."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229647686570237867, guid: 39ca6cc442454f64b82753a38a725a8c, type: 3}
+      propertyPath: secondaryText.Array.data[0]
+      value: This is the cubicle you are looking for
       objectReference: {fileID: 0}
     - target: {fileID: 7229647686570237868, guid: 39ca6cc442454f64b82753a38a725a8c, type: 3}
       propertyPath: m_Mesh
@@ -63810,7 +63814,7 @@ GameObject:
   - component: {fileID: 1998073823}
   - component: {fileID: 919132149245394702}
   m_Layer: 0
-  m_Name: Phone
+  m_Name: Office Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

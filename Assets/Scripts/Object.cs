@@ -40,6 +40,7 @@ public class Object : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         playerInventory = null;
+        canInteract = false;
         uiManager.HideInteractionPrompt();
     }
 }
