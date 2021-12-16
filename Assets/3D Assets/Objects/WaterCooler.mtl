@@ -1,0 +1,25 @@
+newmtl 56021813-red-colour-paper-useful-as-a-background-texture
+map_Kd /Users/micamarietta/Documents/School/LevelDesign_244/CPSC344_Project1/Assets/3D Assets/Texture Images/56021813-red-colour-paper-useful-as-a-background-texture.jpg
+Kd 1 1 1
+d 1
+
+newmtl ColdWater
+Kd 0.01415092 0.2298143 1
+d 1
+
+newmtl radio
+Kd 1 1 1
+d 1
+
+newmtl Window
+Kd 0.2631274 0.4893123 0.6886792
+d 0.6862745
+
+newmtl deskBottom
+Kd 0.2358491 0.2213866 0.2213866
+d 1
+
+newmtl DoorWayWhite
+Kd 1 1 1
+d 1
+
