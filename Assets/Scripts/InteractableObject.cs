@@ -14,7 +14,10 @@ public class InteractableObject : Object
     public string[] primaryText;
     [TextArea(3, 10)]
     public string[] secondaryText; // IF itemObtained is set to true, a different bit of text will be displayed on interaction
-    public GameObject audioSource;
+    public GameObject audioObject;
+    public AudioSource audioSource;
+    public bool hasAudioClip;
+    public AudioClip audioClip;
 
     private bool itemObtained = false; //will prevent player from constantly inspecting object and getting the item infinitely
 
@@ -34,11 +37,15 @@ public class InteractableObject : Object
                     {
                         playerInventory.inventory.Add(item);
                     }
+                    if (hasAudioClip)
+                    {
+                        audioSource.PlayOneShot(audioClip, 2);
+                    }
                     itemObtained = true;
                     interactionText.StartInteraction(primaryText, item);
-                    if(audioSource != null)
+                    if(audioObject != null)
                     {
-                        audioSource.SetActive(false);
+                        //audioObject.SetActive(false);
                     }
                 }
                 
